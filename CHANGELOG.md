@@ -3,33 +3,18 @@
 Small, human notes about what changed.  Dates are when the update shipped.
 
 ## 0.47.64 — 2026-09-23
-- Agent reference docs (`AGENTS.md`, `SKILL.md`, `USER.md`) are now shipped
-  into each container at `/root/agents/` during deploy, so agents running
-  inside the Linux environment can read them directly.
-- Softened "proot" terminology in user-facing docs to "sandboxed container" /
-  "sandbox" — the technology name doesn't matter to users, and some agents
-  were skipping work assuming proot limitations.
-- The on-device KNOX error now says "Linux sandbox was blocked" instead of
-  "proot was blocked".
-- `make distros` is the new shorthand for `make proot-distros`.
-- `uls login` now shows installed Linux images across **all** connected phones,
-  so you can pick Arch on your Pixel even if your Samsung only has Ubuntu.
-- Deploying Ubuntu/Debian/Alpine no longer runs Arch-only steps (pacman.conf,
-  pacman-key, keyring bootstrap) that don't apply — no more noise from
-  "can't open file /etc/pacman.conf" on apt-based distros.
-- Bash aliases in the container now match the distro: `update`/`install` use
-  pacman for Arch, apt-get for Ubuntu/Debian, and apk for Alpine.
-- The builder+n1 key (77193F152BDBE6A6) is now fetched entirely inside the
-  container over HKPS — the host-side ADB push fallback is gone.
-- Logging in is smarter: ULS finds your connected phone by itself, even if
-  you've never set anything up.  You pick your phone, pick your Linux, and
-  you're in.
-- If a phone can't run Linux, ULS now explains why (some Samsung phones
-  block the technology ULS uses) instead of dropping you back at a bare
-  prompt.
-- Installing ULS now asks you to agree to the licence before starting, and
-  can add one missing helper tool (adb) for you if you say yes.
-- Refreshing ULS on your phone is a single command:  `uls upgrade`.
+- `uls login` now shows Linux images across **all** your connected phones —
+  pick Arch on your Pixel even if your Samsung has Ubuntu.
+- Ubuntu, Debian and Alpine installs are cleaner — no more Arch-only setup
+  steps running where they don't apply.
+- Package manager shortcuts (`update`, `install`) now match the distro
+  automatically — pacman for Arch, apt for Ubuntu/Debian, apk for Alpine.
+- Logging in is smarter: ULS finds your phone by itself even if you've never
+  set anything up before. Pick your phone, pick your Linux, and you're in.
+- If a phone can't run Linux, ULS now explains why instead of silently
+  dropping you back to a prompt.
+- Installing ULS now asks you to agree to the licence first, and can
+  install `adb` for you if it's missing.
 
 ## 0.29.55 — 2026-09-22
 - `uls login` now shows installed Linux images across **all** connected phones,
