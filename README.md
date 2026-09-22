@@ -188,7 +188,7 @@ The distro catalog is community-maintained in this folder's [`latest.json`](./la
 To add a new distro or fix a dead mirror:
 
 1. Fork this repo.
-2. Edit `partial/latest.json` — add your entry under `"distros"`.
+2. Edit `latest.json` — add your entry under `"distros"`.
 3. Verify each URL is reachable: `curl -sIL --max-time 20 <url>`
 4. Open a PR — title format: `[catalog] Add <distro-name> (<arch>)`
 
@@ -198,4 +198,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide and entry format.
 
 ## License
 
-© 2026 Jaseunda. See [LICENSE](./LICENSE).
+This repository contains two distinct licenses:
+
+| What | License |
+|---|---|
+| Catalog data (`latest.json`, `CONTRIBUTING.md`, community docs) | [MIT](./LICENSE) — free to use, modify, and redistribute |
+| `uls` binary and `install.sh` (distributed via Releases) | **Proprietary** — see the `NOTICE` file inside each release ZIP |
+
+The `uls` binary is proprietary software © 2026 Jaseunda. Redistribution is not permitted without written permission. Third-party components (proot GPLv2, Arch Linux ARM) are credited in each release's `NOTICE`.
