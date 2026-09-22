@@ -2,7 +2,16 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.27.52 — 2026-09-22
+## 0.29.55 — 2026-09-22
+- `uls login` now shows installed Linux images across **all** connected phones,
+  so you can pick Arch on your Pixel even if your Samsung only has Ubuntu.
+- Deploying Ubuntu/Debian/Alpine no longer runs Arch-only steps (pacman.conf,
+  pacman-key, keyring bootstrap) that don't apply — no more noise from
+  "can't open file /etc/pacman.conf" on apt-based distros.
+- Bash aliases in the container now match the distro: `update`/`install` use
+  pacman for Arch, apt-get for Ubuntu/Debian, and apk for Alpine.
+- The builder+n1 key (77193F152BDBE6A6) is now fetched entirely inside the
+  proot container over HKPS — the host-side ADB push fallback is gone.
 - Logging in is smarter: ULS finds your connected phone by itself, even if
   you've never set anything up.  You pick your phone, pick your Linux, and
   you're in.
