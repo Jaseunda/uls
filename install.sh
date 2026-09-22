@@ -132,7 +132,7 @@ except Exception:
 clear 2>/dev/null || true
 echo ""
 say_banner
-echo "  $(cyl "ULS — Universal Linux Shell")  $(dim "— proot Linux via ADB")"
+echo "  $(cyl "ULS — Universal Linux Shell")  $(dim "— sandboxed Linux via ADB")"
 echo "  $(dim "A real GNU/Linux, running on your Android phone.")"
 echo "  $(dim "──────────────────────────────────────────────")"
 
