@@ -2,7 +2,16 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.46.62 — 2026-09-23
+## 0.47.64 — 2026-09-23
+- Agent reference docs (`AGENTS.md`, `SKILL.md`, `USER.md`) are now shipped
+  into each container at `/root/agents/` during deploy, so agents running
+  inside the Linux environment can read them directly.
+- Softened "proot" terminology in user-facing docs to "sandboxed container" /
+  "sandbox" — the technology name doesn't matter to users, and some agents
+  were skipping work assuming proot limitations.
+- The on-device KNOX error now says "Linux sandbox was blocked" instead of
+  "proot was blocked".
+- `make distros` is the new shorthand for `make proot-distros`.
 - `uls login` now shows installed Linux images across **all** connected phones,
   so you can pick Arch on your Pixel even if your Samsung only has Ubuntu.
 - Deploying Ubuntu/Debian/Alpine no longer runs Arch-only steps (pacman.conf,
