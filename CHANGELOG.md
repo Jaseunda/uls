@@ -2,11 +2,11 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.23.46 — 2026-09-22
+## 0.27.52 — 2026-09-22
 - Logging in is smarter: ULS finds your connected phone by itself, even if
   you've never set anything up.  You pick your phone, pick your Linux, and
   you're in.
-- If a phone can't run Linux, ULS now explains why (some 32bit phones
+- If a phone can't run Linux, ULS now explains why (some Samsung phones
   block the technology ULS uses) instead of dropping you back at a bare
   prompt.
 - Installing ULS now asks you to agree to the licence before starting, and
