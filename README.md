@@ -1,6 +1,6 @@
-# ULS — Universal Linux Shell
+# ULS ~ Universal Linux Shell
 
-> **Run a real GNU/Linux distro on any Android phone over ADB — no root, no app to install.**
+> **Run a real GNU/Linux distro on any Android device over ADB — no root, no app to install.**
 
 ```
      :::    ::::::       ::::::::
@@ -12,7 +12,7 @@
 ######## ##################
 ```
 
-ULS prepares and sets up a rootfs container environment on your Android device, then boots an interactive shell into it — all from your Mac, over USB.
+ULS sets up a rootfs container environment on any ADB-connected Android device, then boots an interactive Linux shell into it — all orchestrated from your Mac. Starting with Android via ADB, with more targets on the roadmap.
 
 ---
 
@@ -84,25 +84,25 @@ uls --help
 
 ### 1 — Onboard your device
 
-Connect your Android phone over USB and run:
+Connect your Android device over USB and run:
 
 ```sh
 uls setup
 ```
 
 This will:
-- Detect all connected ADB devices and let you pick your phone
+- Detect all connected ADB devices and let you pick one
 - Let you choose a Linux distro (Arch Linux, Ubuntu, Debian, Alpine, …)
 - Save a per-device config for future commands
 
-### 2 — Deploy Linux to the phone
+### 2 — Deploy Linux to the device
 
 ```sh
 uls deploy
 ```
 
 Downloads the chosen distro bootstrap tarball matched to your device's
-CPU, then configures and extracts it on the phone.
+CPU, then configures and extracts it on the device.
 First run takes a few minutes depending on your connection speed.
 
 ### 3 — Log in
@@ -111,7 +111,7 @@ First run takes a few minutes depending on your connection speed.
 uls login arch        # or: ubuntu, debian, alpine, etc.
 ```
 
-Drops you into a full interactive Linux shell on your phone.
+Drops you into a full interactive Linux shell on the device.
 `pacman`, `apt`, `apk` — all work.
 
 ---
@@ -168,7 +168,7 @@ Run `uls distros` to see the live list with download links.
 ### From the device
 
 ```sh
-uls uninstall              # removes /data/local/tmp/uls/ from the phone
+uls uninstall             # from the phone
 uls uninstall --dry-run    # preview what would be deleted
 ```
 
