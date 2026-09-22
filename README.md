@@ -43,6 +43,23 @@ ULS prepares and sets up a rootfs container environment on `/data/local/tmp/uls/
 
 ## Install from a Release
 
+### Option 1 — Quick Install (Recommended)
+
+Run directly in your terminal:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Jaseunda/uls/main/install.sh | bash
+```
+
+This will:
+- Automatically download the latest release `.zip` from [GitHub Releases](https://github.com/Jaseunda/uls/releases)
+- Verify integrity against `SHA256SUMS`
+- Extract and install `uls` into `~/.uls/bin`
+- Symlink to `/usr/local/bin` (or `$HOME/.local/bin`) so it's in your `$PATH`
+- Clear macOS Gatekeeper quarantine flags automatically
+
+### Option 2 — Manual Download
+
 1. Download the latest `uls-<version>.zip` from the [Releases page](https://github.com/Jaseunda/uls/releases).
 2. Unzip and install:
 
@@ -51,11 +68,6 @@ unzip uls-<version>.zip
 cd uls-<version>
 ./install.sh
 ```
-
-`install.sh` will:
-- Copy `uls` to `~/.uls/bin/`
-- Add it to your `$PATH`
-- Clear the macOS Gatekeeper quarantine flag automatically
 
 3. Verify:
 
