@@ -12,7 +12,7 @@
 ######## ##################
 ```
 
-ULS prepares and sets up a rootfs container environment on `/data/local/tmp/uls/` on your Android device, then boots an interactive shell into it — all from your Mac, over USB.
+ULS prepares and sets up a rootfs container environment on your Android device, then boots an interactive shell into it — all from your Mac, over USB.
 
 ---
 
