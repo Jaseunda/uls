@@ -1,0 +1,14 @@
+# Strict allowlist: ignore EVERYTHING by default
+/*
+.*
+
+# Explicitly allow this .gitignore
+!.gitignore
+
+# Only allowed public release & community files
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!LICENSE
+!install.sh
+!latest.json
