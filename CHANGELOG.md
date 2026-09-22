@@ -22,6 +22,37 @@ Small, human notes about what changed.  Dates are when the update shipped.
   can add one missing helper tool (adb) for you if you say yes.
 - Refreshing ULS on your phone is a single command:  `uls upgrade`.
 
+## 0.29.55 — 2026-09-22
+- `uls login` now shows installed Linux images across **all** connected phones,
+  so you can pick Arch on your Pixel even if your Samsung only has Ubuntu.
+- Deploying Ubuntu/Debian/Alpine no longer runs Arch-only steps (pacman.conf,
+  pacman-key, keyring bootstrap) that don't apply — no more noise from
+  "can't open file /etc/pacman.conf" on apt-based distros.
+- Bash aliases in the container now match the distro: `update`/`install` use
+  pacman for Arch, apt-get for Ubuntu/Debian, and apk for Alpine.
+- The builder+n1 key (77193F152BDBE6A6) is now fetched entirely inside the
+  container over HKPS — the host-side ADB push fallback is gone.
+- Logging in is smarter: ULS finds your connected phone by itself, even if
+  you've never set anything up.  You pick your phone, pick your Linux, and
+  you're in.
+- If a phone can't run Linux, ULS now explains why (some Samsung phones
+  block the technology ULS uses) instead of dropping you back at a bare
+  prompt.
+- Installing ULS now asks you to agree to the licence before starting, and
+  can add one missing helper tool (adb) for you if you say yes.
+- Refreshing ULS on your phone is a single command:  `uls upgrade`.
+
+## 0.27.52 — 2026-09-22
+- Logging in is smarter: ULS finds your connected phone by itself, even if
+  you've never set anything up.  You pick your phone, pick your Linux, and
+  you're in.
+- If a phone can't run Linux, ULS now explains why (some Samsung phones
+  block the technology ULS uses) instead of dropping you back at a bare
+  prompt.
+- Installing ULS now asks you to agree to the licence before starting, and
+  can add one missing helper tool (adb) for you if you say yes.
+- Refreshing ULS on your phone is a single command:  `uls upgrade`.
+
 ## 0.20.15 — 22 Sep 2026
 - `uls login` opens a real GNU/Linux on your Android phone — no rooting, no
   app to install.
