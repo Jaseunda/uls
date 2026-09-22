@@ -2,7 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.29.55 — 2026-09-22
+## 0.42.58 — 2026-09-23
 - `uls login` now shows installed Linux images across **all** connected phones,
   so you can pick Arch on your Pixel even if your Samsung only has Ubuntu.
 - Deploying Ubuntu/Debian/Alpine no longer runs Arch-only steps (pacman.conf,
