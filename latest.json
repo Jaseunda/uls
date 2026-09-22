@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "description": "ULS community distro catalog — single source of truth for every bootstrap image and proot binary URL. Edit this file to add/update distros; open a PR to get it into the release. See CONTRIBUTING.md for the full guide.",
+    "generated": "2026-09-22",
+    "layout_note": "distros: ordered list; selection keys in the setup wizard are 1..N. bootstrap: map of device-arch (aarch64/arm) -> ordered mirror URL list, first live one wins. Extra non-URL fields (sha256) are informational; a bootstrap entry without a URL list is skipped.",
+    "gzip_only": "All images must be .tar.gz: the on-device toybox tar extractor only supports gzip (no xz/J). openSUSE (.tar.xz) and Fedora (OCI layout) are intentionally not catalogued.",
+    "community": "Submit PRs to add or update distros. Merged entries are included in the next ULS release."
+  },
+  "proot_binaries": {
+    "aarch64": {
+      "url": "https://github.com/proot-me/proot/releases/download/v5.3.0/proot-v5.3.0-aarch64-static",
+      "sha256": "fa10b1a7818c2f5b1dcb5834450570c368c9ecf66d31521509621b95c4538a45"
+    },
+    "arm": {
+      "url": "https://github.com/proot-me/proot/releases/download/v5.3.0/proot-v5.3.0-arm-static",
+      "sha256": "bf186a37c7a19621e5bf3cfdf6bce54bfa2e220f91eb7196318e699ac174cc69"
+    },
+    "x86_64": {
+      "url": "https://github.com/proot-me/proot/releases/download/v5.3.0/proot-v5.3.0-x86_64-static"
+    }
+  },
+  "distros": [
+    {
+      "id": "archlinux",
+      "name": "Arch Linux",
+      "arches": [
+        "aarch64",
+        "arm"
+      ],
+      "note": "Always current, huge package store.",
+      "bootstrap": {
+        "aarch64": [
+          "https://archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz",
+          "http://ca.us.mirror.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz",
+          "http://fl.us.mirror.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz"
+        ],
+        "arm": [
+          "https://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz",
+          "http://ca.us.mirror.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz",
+          "http://fl.us.mirror.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz"
+        ]
+      }
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu 24.04 (Noble)",
+      "arches": [
+        "aarch64",
+        "arm"
+      ],
+      "note": "The familiar favourite, long-term supported.",
+      "bootstrap": {
+        "aarch64": [
+          "https://cdimage.ubuntu.com/ubuntu-base/releases/24.04/release/ubuntu-base-24.04.4-base-arm64.tar.gz"
+        ],
+        "arm": [
+          "https://cdimage.ubuntu.com/ubuntu-base/releases/24.04/release/ubuntu-base-24.04.4-base-armhf.tar.gz"
+        ]
+      }
+    },
+    {
+      "id": "debian",
+      "name": "Debian 12 (Bookworm)",
+      "arches": [
+        "aarch64",
+        "arm"
+      ],
+      "note": "Solid and dependable — a great default.",
+      "bootstrap": {
+        "aarch64": [
+          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bookworm/oci/blobs/rootfs.tar.gz"
+        ],
+        "arm": [
+          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm32v7/bookworm/oci/blobs/rootfs.tar.gz"
+        ]
+      }
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine Linux 3.24",
+      "arches": [
+        "aarch64",
+        "arm"
+      ],
+      "note": "Tiny and fast — perfect for smaller phones.",
+      "bootstrap": {
+        "aarch64": [
+          "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/aarch64/alpine-minirootfs-3.24.1-aarch64.tar.gz"
+        ],
+        "arm": [
+          "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/armv7/alpine-minirootfs-3.24.1-armv7.tar.gz"
+        ]
+      },
+      "sha256": {
+        "aarch64": "f55a90f69052c5bd6f92cb09a8f47065970830b194c917a006fb94028e721259",
+        "arm": "50942d567e6ee422c16cb46d5c282ed9d8adc9007c2a483faf4148a18c64ce32"
+      }
+    }
+  ]
+}
