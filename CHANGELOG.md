@@ -2,10 +2,9 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.49.69 — 2026-09-23
+## 0.49.70 — 2026-09-23
 - Enhanced SSH over Wi-Fi (`uls ssh`): Dropbear remote shell and terminal sessions now run reliably without unexpected connection resets.
 - Added full support for forced and scripted terminal sessions (`ssh -tt`) over Wi-Fi with reliable input/output streaming and clean exit status propagation.
-- Bundled native terminal compatibility helpers (`libfakedevpts.so`) directly into the distribution for robust pseudo-terminal management under the sandboxed container.
 - Dropbear is now the default lightweight SSH server on device, delivering immediate cable-free access with minimal memory footprint.
 
 ## 0.47.64 — 2026-09-23
