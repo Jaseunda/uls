@@ -2,6 +2,10 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.55.83 — 2026-09-23
+- Added pre-installed native Docker userland engine: run Docker containers (`docker run`, `docker pull`, `docker images`, `docker ps`) directly inside your Linux containers without kernel permissions or background daemon crashes.
+- Automatic multi-device upgrade: `uls upgrade` now automatically refreshes all connected devices and installed containers without interactive prompts.
+
 ## 0.51.76 — 2026-09-23
 - Added `uls install update` command to seamlessly update the ULS binary and automatically refresh all connected devices.
 - Automatic version checking: ULS now checks for updates in the background and notifies you when a newer version is available.
