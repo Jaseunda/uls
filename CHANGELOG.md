@@ -2,7 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.70.114 — 2026-09-24
+## 0.70.117 — 2026-09-24
 - **Live Elapsed Timer in `uls deploy`**: Added a live elapsed seconds and minutes timer during sandbox installation, download preparation, ADB transfers, and on-device unpacking so you always know operations are progressing without terminal lockup.
 - **Native `ncode` Editor for Arq**:
   - Rebranded editor workflow to `ncode`, natively aliasing `code`, `code .`, and `lvim`.
