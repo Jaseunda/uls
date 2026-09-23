@@ -2,13 +2,17 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.68.100 — 2026-09-24
-- **Interactive Checkbox Uninstaller**: `uls uninstall` now features interactive multi-selection checkboxes (`Space` to toggle, `a` to select/deselect all, `Enter` to confirm, `←` to cancel) so you can selectively remove specific Linux distros without wiping your other containers or the core ULS runtime.
-- **Arq Runtime Enhancements**:
-  - Pre-installed developer packages (`neovim`, `git`, `ripgrep`, `fastfetch`) out of the box.
-  - Full LunarVim IDE environment and NvimTree integration configured for `code .` and `lvim .`.
-  - Distro prompt isolation with `root@arq ~ %` and custom hostname mapping.
-  - Redesigned Fastfetch branding featuring a custom cyberpunk slash sweep logo with electric violet-to-cyan gradient.
+## 0.70.114 — 2026-09-24
+- **Live Elapsed Timer in `uls deploy`**: Added a live elapsed seconds and minutes timer during sandbox installation, download preparation, ADB transfers, and on-device unpacking so you always know operations are progressing without terminal lockup.
+- **Native `ncode` Editor for Arq**:
+  - Rebranded editor workflow to `ncode`, natively aliasing `code`, `code .`, and `lvim`.
+  - Hardcoded Ayu Mirage (Dark) & Ayu Light (Light) palette with sleek bordered floating windows and seamless 1px sidebar divider.
+  - Full mouse click, cursor positioning, and scroll wheel support.
+  - Safe folder navigation with Left/Right arrow keys (`→` to expand/open, `←` to collapse) with strict root project locking to prevent accidental escape to Linux `/`.
+  - Suppressed all benign tree-sitter and illuminate `nil parent` warnings and popup interruptions.
+  - Pure VS Code shortcuts without modal escapes (`Ctrl+S`, `Ctrl+P`, `Ctrl+B`, `Ctrl+F`, `Ctrl+Z`, `Ctrl+C`/`X`/`V`).
+- **Dedicated Arq Container Banner**: `uls login arq` now specifically renders the cyberpunk slash sweep ASCII banner with the violet-to-cyan gradient on container startup.
+- **Interactive Checkbox Uninstaller**: `uls uninstall` features interactive multi-selection checkboxes (`Space` to toggle, `a` to select/deselect all, `Enter` to confirm, `←` to cancel) so you can selectively remove specific Linux distros without wiping your other containers or the core ULS runtime.
 - **SSH Multi-Container Port Isolation**: `uls ssh` now tracks active container rootfs instances, preventing port collisions and enabling side-by-side SSH sessions across multiple Linux containers on the same device.
 
 ## 0.56.87 — 2026-09-23
