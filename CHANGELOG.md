@@ -2,7 +2,8 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.55.83 — 2026-09-23
+## 0.56.87 — 2026-09-23
+- Added interactive arrow-key navigation interface: navigate menus and options using Up/Down arrows (`↑`/`↓`), select or enter with Right arrow or Enter (`→`/`↵`), and go back or cancel with Left arrow (`←`/`q`).
 - Added pre-installed native Docker userland engine: run Docker containers (`docker run`, `docker pull`, `docker images`, `docker ps`) directly inside your Linux containers without kernel permissions or background daemon crashes.
 - Automatic multi-device upgrade: `uls upgrade` now automatically refreshes all connected devices and installed containers without interactive prompts.
 
