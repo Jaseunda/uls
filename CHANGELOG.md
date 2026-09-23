@@ -2,7 +2,11 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.49.70 — 2026-09-23
+## 0.51.76 — 2026-09-23
+- Added `uls install update` command to seamlessly update the ULS binary and automatically refresh all connected devices.
+- Automatic version checking: ULS now checks for updates in the background and notifies you when a newer version is available.
+- Fixed an issue on macOS where updating binaries in-place could cause crashes (`killed`).
+- Resolved duplicate device detection when devices are connected simultaneously over Wi-Fi and USB.
 - Enhanced SSH over Wi-Fi (`uls ssh`): Dropbear remote shell and terminal sessions now run reliably without unexpected connection resets.
 - Added full support for forced and scripted terminal sessions (`ssh -tt`) over Wi-Fi with reliable input/output streaming and clean exit status propagation.
 - Dropbear is now the default lightweight SSH server on device, delivering immediate cable-free access with minimal memory footprint.

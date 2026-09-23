@@ -324,6 +324,9 @@ chmod 755 "$BIN/uls"
 if command -v xattr >/dev/null 2>&1; then
     xattr -d com.apple.quarantine "$BIN/uls" 2>/dev/null || true
 fi
+if command -v codesign >/dev/null 2>&1; then
+    codesign --force --sign - "$BIN/uls" 2>/dev/null || true
+fi
 cp "$SRC/README.md"    "$PREFIX/README.md"
 cp "$SRC/NOTICE"       "$PREFIX/NOTICE"
 cp "$SRC/CHANGELOG.md" "$PREFIX/CHANGELOG.md"
