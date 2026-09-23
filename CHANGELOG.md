@@ -2,6 +2,15 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.68.100 — 2026-09-24
+- **Interactive Checkbox Uninstaller**: `uls uninstall` now features interactive multi-selection checkboxes (`Space` to toggle, `a` to select/deselect all, `Enter` to confirm, `←` to cancel) so you can selectively remove specific Linux distros without wiping your other containers or the core ULS runtime.
+- **Arq Runtime Enhancements**:
+  - Pre-installed developer packages (`neovim`, `git`, `ripgrep`, `fastfetch`) out of the box.
+  - Full LunarVim IDE environment and NvimTree integration configured for `code .` and `lvim .`.
+  - Distro prompt isolation with `root@arq ~ %` and custom hostname mapping.
+  - Redesigned Fastfetch branding featuring a custom cyberpunk slash sweep logo with electric violet-to-cyan gradient.
+- **SSH Multi-Container Port Isolation**: `uls ssh` now tracks active container rootfs instances, preventing port collisions and enabling side-by-side SSH sessions across multiple Linux containers on the same device.
+
 ## 0.56.87 — 2026-09-23
 - Added interactive arrow-key navigation interface: navigate menus and options using Up/Down arrows (`↑`/`↓`), select or enter with Right arrow or Enter (`→`/`↵`), and go back or cancel with Left arrow (`←`/`q`).
 - Added pre-installed native Docker userland engine: run Docker containers (`docker run`, `docker pull`, `docker images`, `docker ps`) directly inside your Linux containers without kernel permissions or background daemon crashes.
