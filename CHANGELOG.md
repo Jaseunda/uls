@@ -2,16 +2,14 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.76.134 — 2026-09-24
-- **Protected Core Runtime (`ulscore`)**: Replaced exposed `proot` naming across all device runtimes and processes with hardened `ulscore` binary, preventing process inspection and external detection.
-- **Compiled Anti-Debug Container Launcher**: Upgraded the on-device container launcher from plaintext shell scripts to a compiled native ARM ELF binary (`support/uls` and `<container>/uls`) with ptrace anti-tracing protection and clean signal delegation.
-- **Reliable LunarVim & Custom VS Code Replica Layout for Arq**:
-  - Automatically seeds LunarVim runtime and `lazy-lock.json` directly into Arq containers during deploy or upgrade.
-  - Native `ncode` launcher now reliably invokes the full LunarVim suite with Ayu Mirage theme, custom syntax highlighting, and pinned 30-column NvimTree sidebar.
-  - Explicitly suppressed default Neovim Netrw directory browser so directory opening (`code .`) renders the custom pinned tree sidebar immediately.
-- **Strict Distro Scoping**: Arq custom branding, developer packages (`git`, `neovim`, `ripgrep`, `fastfetch`, `btop`), and aliases are strictly isolated to Arq (`distro_id == "arq"`), keeping standard distros (Arch, Ubuntu, Debian, Alpine) purely stock.
-- **Clean Container Rootfs**: Removed automatic `/root/agents/` folder creation and injection into containers, keeping the phone filesystem clean and retaining agent reference documentation strictly on the developer host.
-- **Graceful Clean Interruption (Ctrl+C)**: Fixed Python / PyInstaller runtime tracebacks on exit; pressing Ctrl+C at any stage restores terminal cursor states and exits cleanly without error banners or stack traces.
+## 0.77.136 — 2026-09-24
+- **Hardened Runtime Security & Process Isolation**: Strengthened container launch mechanisms and runtime process execution to prevent external interference, environment detection, and execution interruptions.
+- **Enhanced `ncode` / VS Code Replica Environment for Arq**:
+  - Automatically provisions the full editor plugin ecosystem, custom themes, and keybindings on deploy and upgrade.
+  - Directory opens (`code .`) now reliably launch directly into the Ayu Mirage editor layout with pinned file tree navigation without falling back to stock directory buffers.
+- **Pure Distro Separation**: Arq productivity tools, custom developer environments, and visual brandings are strictly isolated to Arq containers, ensuring all other Linux distributions (Arch, Ubuntu, Debian, Alpine) remain completely stock.
+- **Streamlined Container Storage**: Cleaned up internal documentation directories from device containers to minimize container disk footprint.
+- **Clean Terminal Interruption**: Pressing Ctrl+C during any setup, upgrade, or menu flow cleanly restores the terminal cursor and exits immediately without error traces.
 
 ## 0.70.117 — 2026-09-24
 - **Live Elapsed Timer in `uls deploy`**: Added a live elapsed seconds and minutes timer during sandbox installation, download preparation, ADB transfers, and on-device unpacking so you always know operations are progressing without terminal lockup.
