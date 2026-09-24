@@ -2,8 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.77.136 — 2026-09-24
-- **Hardened Runtime Security & Process Isolation**: Strengthened container launch mechanisms and runtime process execution to prevent external interference, environment detection, and execution interruptions.
+## 0.78.138 — 2026-09-24
 - **Enhanced `ncode` / VS Code Replica Environment for Arq**:
   - Automatically provisions the full editor plugin ecosystem, custom themes, and keybindings on deploy and upgrade.
   - Directory opens (`code .`) now reliably launch directly into the Ayu Mirage editor layout with pinned file tree navigation without falling back to stock directory buffers.
