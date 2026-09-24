@@ -2,6 +2,17 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.76.134 — 2026-09-24
+- **Protected Core Runtime (`ulscore`)**: Replaced exposed `proot` naming across all device runtimes and processes with hardened `ulscore` binary, preventing process inspection and external detection.
+- **Compiled Anti-Debug Container Launcher**: Upgraded the on-device container launcher from plaintext shell scripts to a compiled native ARM ELF binary (`support/uls` and `<container>/uls`) with ptrace anti-tracing protection and clean signal delegation.
+- **Reliable LunarVim & Custom VS Code Replica Layout for Arq**:
+  - Automatically seeds LunarVim runtime and `lazy-lock.json` directly into Arq containers during deploy or upgrade.
+  - Native `ncode` launcher now reliably invokes the full LunarVim suite with Ayu Mirage theme, custom syntax highlighting, and pinned 30-column NvimTree sidebar.
+  - Explicitly suppressed default Neovim Netrw directory browser so directory opening (`code .`) renders the custom pinned tree sidebar immediately.
+- **Strict Distro Scoping**: Arq custom branding, developer packages (`git`, `neovim`, `ripgrep`, `fastfetch`, `btop`), and aliases are strictly isolated to Arq (`distro_id == "arq"`), keeping standard distros (Arch, Ubuntu, Debian, Alpine) purely stock.
+- **Clean Container Rootfs**: Removed automatic `/root/agents/` folder creation and injection into containers, keeping the phone filesystem clean and retaining agent reference documentation strictly on the developer host.
+- **Graceful Clean Interruption (Ctrl+C)**: Fixed Python / PyInstaller runtime tracebacks on exit; pressing Ctrl+C at any stage restores terminal cursor states and exits cleanly without error banners or stack traces.
+
 ## 0.70.117 — 2026-09-24
 - **Live Elapsed Timer in `uls deploy`**: Added a live elapsed seconds and minutes timer during sandbox installation, download preparation, ADB transfers, and on-device unpacking so you always know operations are progressing without terminal lockup.
 - **Native `ncode` Editor for Arq**:
