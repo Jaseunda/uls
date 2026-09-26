@@ -2,7 +2,10 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.99.147 — 2026-09-26
+## 0.100.152 — 2026-09-26
+- **Fixed Package Managers on Modern Android Phones (Kernel ≥ 5.8)**:
+  - Resolved `pacman` and `pacman-key` initialization errors (`could not find or read directory`) on newer Android kernels (e.g. Linux 6.12 on Samsung Galaxy S24 Ultra / SM-S948B).
+  - Modern glibc 2.43 prioritizes `faccessat2` (syscall 439), which reaches host Android untranslated. Interposed `faccessat`, `euidaccess`, and `eaccess` via the `libfaccessatfix.so` preload shim, routing directly to `__NR_faccessat` to ensure seamless operation across all Android kernel versions.
 - **Fixed File Linking Inside Sandboxes**: Hard links now behave correctly, so `git clone`, `uv`, Python package builds and archive extraction produce intact files again instead of quietly writing damaged ones.
 - **Fixed Firefox Crashing on Startup**: Firefox — and anything else that needs shared memory — now starts normally. Sandboxes had no `/dev/shm` at all, which made Firefox exit immediately every time it was launched.
 - **`uls upgrade` Now Detects and Reports Damage**: Upgrading carries the fix down to sandboxes you already have, then checks them for files damaged by the old linking bug and tells you how to repair them if any are found.
