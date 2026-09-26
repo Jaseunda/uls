@@ -2,7 +2,10 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.80.141 — 2026-09-24
+## 0.98.146 — 2026-09-26
+- **Fixed File Linking Inside Sandboxes**: Hard links now behave correctly, so `git clone`, `uv`, Python package builds and archive extraction produce intact files again instead of quietly writing damaged ones.
+- **Fixed Firefox Crashing on Startup**: Firefox — and anything else that needs shared memory — now starts normally. Sandboxes had no `/dev/shm` at all, which made Firefox exit immediately every time it was launched.
+- **`uls upgrade` Now Detects and Reports Damage**: Upgrading carries the fix down to sandboxes you already have, then checks them for files damaged by the old linking bug and tells you how to repair them if any are found.
 - **Enhanced `ncode` / VS Code Replica Environment for Arq**:
   - Automatically provisions the full editor plugin ecosystem, custom themes, and keybindings on deploy and upgrade.
   - Directory opens (`code .`) now reliably launch directly into the Ayu Mirage editor layout with pinned file tree navigation without falling back to stock directory buffers.
