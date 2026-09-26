@@ -2,6 +2,12 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.103.159 — 2026-09-26
+- **Enhanced Contributor Developer Toolchain & Sandbox Compatibility**:
+  - `uls --i-am-developer` now dynamically compiles compatibility shims directly from the active working directory or `--src <dir>`, enabling external developers to test and verify custom shims on live hardware with zero reconfiguration.
+  - Added native interposition support for local UNIX domain sockets and empty path operations, resolving background service authentication and package manager transaction locks across modern Android kernels.
+  - Expanded container extension hooks (`launcher-ext.c`) allowing seamless custom pre-exec, terminal handling, and exit status mapping.
+
 ## 0.102.157 — 2026-09-26
 - **Improved Compatibility for Package Managers on Modern Android 15 & 16 Devices**:
   - Resolves path resolution and directory lookup issues that could cause package managers (like `pacman`) to fail when initializing local databases on newer Android phone kernels.
