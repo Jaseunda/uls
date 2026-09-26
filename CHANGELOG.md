@@ -2,6 +2,11 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.102.157 — 2026-09-26
+- **Improved Compatibility for Package Managers on Modern Android 15 & 16 Devices**:
+  - Resolves path resolution and directory lookup issues that could cause package managers (like `pacman`) to fail when initializing local databases on newer Android phone kernels.
+  - Ensures clean, universal fallback across all background processes and subshells so software installs reliably out of the box. *(Contributed by Ethan Blanch)*
+
 ## 0.100.152 — 2026-09-26
 - **Fixed Package Managers on Modern Android Phones (Kernel ≥ 5.8)**:
   - Resolved `pacman` and `pacman-key` initialization errors (`could not find or read directory`) on newer Android kernels (e.g. Linux 6.12 on Samsung Galaxy S24 Ultra / SM-S948B).
