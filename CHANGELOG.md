@@ -2,11 +2,17 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.103.159 — 2026-09-26
-- **Enhanced Contributor Developer Toolchain & Sandbox Compatibility**:
-  - `uls --i-am-developer` now dynamically compiles compatibility shims directly from the active working directory or `--src <dir>`, enabling external developers to test and verify custom shims on live hardware with zero reconfiguration.
-  - Added native interposition support for local UNIX domain sockets and empty path operations, resolving background service authentication and package manager transaction locks across modern Android kernels.
-  - Expanded container extension hooks (`launcher-ext.c`) allowing seamless custom pre-exec, terminal handling, and exit status mapping.
+## 0.105.164 — 2026-09-28
+- **Broader Linux App & Package Compatibility**:
+  - Enhanced system communication and local service handling, ensuring background daemons and container tools run reliably across older and newer Android phones alike. *(Contributed by Ethan Blanch, reviewed & merged by @jaseunda)*
+  - Resolved file attribute and permission permission issues during package installation and archive extraction on devices with strict security policies. *(Contributed by Ethan Blanch, merged by @jaseunda)*
+  - Improved file status queries for older phone kernels, preventing crashes and hangs when running modern Linux distributions. *(Contributed by Ethan Blanch, reviewed with @ItsPhysip)*
+  - Hardened kernel feature detection across diverse phone architectures to ensure smooth startup on devices from Linux 4.8 up to modern Android 16. *(Co-authored by Ethan Blanch & @ItsPhysip, merged by @jaseunda)*
+- **Community Developer Tooling**:
+  - Added streamlined live compilation tools and container extension hooks so contributors can test enhancements directly on real devices with zero setup overhead. *(Designed & implemented by @jaseunda)*
+  - Stabilized multi-architecture build pipelines for consistent performance across all supported device platforms. *(Contributed by Ethan Blanch, reviewed by @ItsPhysip, merged by @jaseunda)*
+- **Changelog Audit**:
+  - Verified and audited by [`Darnes`](https://darnes.notapublicfigureanymore.com/gitbot).
 
 ## 0.102.157 — 2026-09-26
 - **Improved Compatibility for Package Managers on Modern Android 15 & 16 Devices**:
