@@ -60,7 +60,7 @@
     },
     {
       "id": "debian",
-      "name": "Debian 12 (Bookworm)",
+      "name": "Debian 13 (Trixie)",
       "arches": [
         "aarch64",
         "arm"
@@ -68,10 +68,10 @@
       "note": "Solid and dependable — a great default.",
       "bootstrap": {
         "aarch64": [
-          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bookworm/oci/blobs/rootfs.tar.gz"
+          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/trixie/oci/blobs/rootfs.tar.gz"
         ],
         "arm": [
-          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm32v7/bookworm/oci/blobs/rootfs.tar.gz"
+          "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm32v7/trixie/oci/blobs/rootfs.tar.gz"
         ]
       }
     },
