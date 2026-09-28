@@ -2,7 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.105.164 — 2026-09-28
+## 0.105.167 — 2026-09-28
 - **Broader Linux App & Package Compatibility**:
   - Enhanced system communication and local service handling, ensuring background daemons and container tools run reliably across older and newer Android phones alike. *(Contributed by Ethan Blanch, reviewed & merged by @jaseunda)*
   - Resolved file attribute and permission permission issues during package installation and archive extraction on devices with strict security policies. *(Contributed by Ethan Blanch, merged by @jaseunda)*
