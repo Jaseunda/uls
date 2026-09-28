@@ -8,8 +8,8 @@
   },
   "proot_binaries": {
     "aarch64": {
-      "url": "https://github.com/ItsPhysip/uls-proot/releases/download/uls-a7d996b-r1/proot-aarch64",
-      "sha256": "f7fe260574203c6687e4a36ce85941a3e06e306f3aaa4e161915047b6c5aa813"
+      "url": "https://github.com/ItsPhysip/uls-proot/releases/download/uls-2e01dc3-r1/proot-aarch64",
+      "sha256": "b6677a663a810cee0abb49f0b66a7011bf1aeec4e3b2034b12639b0e09c03ae6"
     },
     "arm": {
       "url": "https://github.com/proot-me/proot/releases/download/v5.3.0/proot-v5.3.0-arm-static",
