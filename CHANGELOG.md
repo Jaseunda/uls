@@ -2,6 +2,11 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.105.172 — 2026-09-28
+- **VNC Desktop Streaming (`uls vnc`)**:
+  - Stream a full graphical desktop from your Android container straight to macOS over VNC with automatic port forwarding and TigerVNC client launching.
+  - Zero-configuration desktop bridge with support for `--serial <SERIAL>` targeting.
+
 ## 0.105.167 — 2026-09-28
 - **Broader Linux App & Package Compatibility**:
   - Enhanced system communication and local service handling, ensuring background daemons and container tools run reliably across older and newer Android phones alike. *(Contributed by Ethan Blanch, reviewed & merged by @jaseunda)*
