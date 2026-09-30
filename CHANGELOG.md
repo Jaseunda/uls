@@ -2,7 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.117.213 — 2026-10-01
+## 0.118.216 — 2026-10-01
 - **Native Host CLI Container Manager (`uls docker`)**:
   - Added built-in `uls docker` command to control on-device containers directly from your Mac without needing Docker Desktop or Docker CLI installed locally on macOS.
   - Implemented human-readable, formatted process tables (`uls docker ps`) displaying truncated 12-char container IDs, service names, images, status, and mapped network ports.
@@ -17,6 +17,7 @@ Small, human notes about what changed.  Dates are when the update shipped.
 - **Docker Desktop macOS Integration & Background REST Daemon (`uls-dockerd`)**:
   - Implemented the Docker Engine v1.45 REST API server running persistently in userland inside `dragon`.
   - Connect from your Mac over the standard USB port-forward: `uls docker ps` sets it up automatically, and Docker clients use `tcp://127.0.0.1:2375`.
+  - With several phones connected, `uls docker ps` asks which one to target (`--serial`) instead of guessing.
 - **Slimmer, Faster Distribution**:
   - Release bundles are much smaller — roughly 60% fewer embedded files — carrying only the components the tools actually use at runtime.
 - **Container Service Stack Installer (`uls docker <container> --install-services`)**:
