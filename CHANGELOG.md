@@ -2,7 +2,11 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.117.194 — 2026-09-30
+## 0.117.198 — 2026-09-30
+- **Docker Context Management & Remote Daemon Support (`docker context`)**:
+  - Implemented standard Docker context management directly inside ULS containers (`docker context create`, `use`, `ls`, `inspect`, `rm`, `show`).
+  - Added support for targeting remote Docker daemons via `docker context create <name> --docker host=tcp://<ip>:2375` and `docker context use <name>`.
+  - Automatically provisions upstream Docker CLI integration and routes API commands to remote daemons while retaining the zero-root unprivileged engine for local offline workloads.
 - **Autonomous AI Agent Operational Guide (`uls --i-am-agent`)**:
   - Added dedicated `--i-am-agent` mode to output raw, unstyled operational instructions and scripting guidelines directly to terminal pipelines and AI coding assistants.
   - Documented full workstation capabilities including userland Docker, macOS Metal GUI (`uls display`), and native Finder SMB storage (`uls mount`).
