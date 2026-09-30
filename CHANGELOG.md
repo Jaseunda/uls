@@ -2,7 +2,13 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.105.172 — 2026-09-28
+## 0.109.181 — 2026-09-30
+- **`uls mount` — Your Linux Home as a Drive on the Mac**:
+  - Mounts the container home on this Mac over SMB: a Finder window opens straight onto the mounted folder, and VS Code or any editor can open it by path. No installs, no dialogs, no root.
+  - Modern macOS no longer mounts `sftp://` network drives at all — which is why earlier versions could report success while no volume ever appeared. The mount now uses macOS's native SMB stack end to end, and an SFTP server is still provisioned inside the container for command-line and editor SFTP workflows.
+  - Mounts are verified before success is reported, failed or abandoned attempts no longer leave port forwards behind, and `uls mount --umount` unmounts the real volume and cleans everything up.
+  - File sharing runs on its own ports inside the container, so mounting never restarts or disturbs `uls ssh` sessions (and a running SSH session no longer blocks mounting).
+  - Fixed the file-transfer backends refusing to start under the sandbox's hardened process self-check — SFTP used to close the moment authentication succeeded, and the SMB server never started at all. A small compatibility layer now lets them run, delivered to existing containers automatically on the next `uls mount`.
 - **VNC Desktop Streaming (`uls vnc`)**:
   - Stream a full graphical desktop from your Android container straight to macOS over VNC with automatic port forwarding and TigerVNC client launching.
   - Zero-configuration desktop bridge with support for `--serial <SERIAL>` targeting.
