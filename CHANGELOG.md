@@ -2,7 +2,7 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.118.220 — 2026-10-01
+## 0.118.225 — 2026-10-01
 - **Native Host CLI Container Manager (`uls docker`)**:
   - Added built-in `uls docker` command to control on-device containers directly from your Mac without needing Docker Desktop or Docker CLI installed locally on macOS.
   - Implemented human-readable, formatted process tables (`uls docker ps`) displaying truncated 12-char container IDs, service names, images, status, and mapped network ports.
@@ -18,6 +18,7 @@ Small, human notes about what changed.  Dates are when the update shipped.
   - Implemented the Docker Engine v1.45 REST API server running persistently in userland inside `dragon`.
   - Connect from your Mac over the standard USB port-forward: `uls docker ps` sets it up automatically, and Docker clients use `tcp://127.0.0.1:2375`.
   - With several phones connected, `uls docker ps` automatically targets the phone running the service stack — it only asks when several phones answer.
+  - New `uls docker up` / `uls docker down` lifecycle commands start and stop the service stack cleanly, and docker commands bring the stack back automatically (for example after a phone reboot) unless you stopped it on purpose.
   - Device service boots now recover cleanly after an unclean shutdown: stale locks and shared-memory leftovers from a killed database are cleared automatically before startup.
   - An IPC compatibility shim now ships for every image, letting databases and other System V shared-memory software run unprivileged on kernels that restrict it.
 - **Gentler Device Updates**:
