@@ -2,8 +2,12 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.116.191 — 2026-09-30
+## 0.117.194 — 2026-09-30
+- **Autonomous AI Agent Operational Guide (`uls --i-am-agent`)**:
+  - Added dedicated `--i-am-agent` mode to output raw, unstyled operational instructions and scripting guidelines directly to terminal pipelines and AI coding assistants.
+  - Documented full workstation capabilities including userland Docker, macOS Metal GUI (`uls display`), and native Finder SMB storage (`uls mount`).
 - **Clickable Version & Release Links**:
+
   - Update notification banners and update completion notices now render clickable version links and a direct `[view changelog]` link in your terminal, opening the release page directly in your browser.
 - **Clear Distro & Image Display in Pickers**:
   - The cross-device selection menus in `uls ssh`, `uls mount`, and `uls login` now display the friendly distribution name alongside the container identifier (e.g. `Arq (arq) on SM-F926B`) instead of duplicate or ambiguous directory names.
