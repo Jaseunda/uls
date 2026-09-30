@@ -2,7 +2,12 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.111.184 — 2026-09-30
+## 0.115.187 — 2026-09-30
+- **Clear Distro & Image Display in Pickers**:
+  - The cross-device selection menus in `uls ssh`, `uls mount`, and `uls login` now display the friendly distribution name alongside the container identifier (e.g. `Arq (arq) on SM-F926B`) instead of duplicate or ambiguous directory names.
+- **Resilient Distro Deployment & Package Setup**:
+  - Distro deployments now automatically detect and clear lingering cryptographic agent sockets from earlier aborted sessions, preventing initialization hangs during first boot.
+  - Package manager keyring setup now safely handles network and wireless ADB timeouts without crashing the deployment process, gracefully falling back to offline trusted key imports.
 - **`uls mount` — Your Linux Home as a Drive on the Mac**:
   - Mounts the container home on this Mac over SMB: a Finder window opens straight onto the mounted folder, and VS Code or any editor can open it by path. No installs, no dialogs, no root.
   - Modern macOS no longer mounts `sftp://` network drives at all — which is why earlier versions could report success while no volume ever appeared. The mount now uses macOS's native SMB stack end to end, and an SFTP server is still provisioned inside the container for command-line and editor SFTP workflows.
@@ -16,6 +21,7 @@ Small, human notes about what changed.  Dates are when the update shipped.
 - **VNC Desktop Streaming (`uls vnc`)**:
   - Stream a full graphical desktop from your Android container straight to macOS over VNC with automatic port forwarding and TigerVNC client launching.
   - Zero-configuration desktop bridge with support for `--serial <SERIAL>` targeting.
+
 
 ## 0.105.167 — 2026-09-28
 - **Broader Linux App & Package Compatibility**:
