@@ -2,6 +2,26 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
+## 0.117.213 — 2026-10-01
+- **Native Host CLI Container Manager (`uls docker`)**:
+  - Added built-in `uls docker` command to control on-device containers directly from your Mac without needing Docker Desktop or Docker CLI installed locally on macOS.
+  - Implemented human-readable, formatted process tables (`uls docker ps`) displaying truncated 12-char container IDs, service names, images, status, and mapped network ports.
+  - Transparently routes standard container subcommands and arguments directly to the active phone sandbox over Wi-Fi/ADB.
+- **One-Command Project Deployment (`uls docker <container> --template [dir]`)**:
+  - Deploy any local project codebase straight to your phone with zero manual configuration.
+  - Deterministic container targeting: explicitly specify your destination container (e.g. `uls docker dragon --template .` or `uls docker arq --template .`) or let it automatically resolve to your active container (`$ULS_CONTAINER` or current configuration), guaranteeing code is never deployed to an unexpected sandbox.
+  - Automatically parses standard project manifests (`docker-compose.yml`, `Dockerfile`), synchronizes files over ADB, registers container endpoints, and launches background daemons under the phone supervisor.
+- **Background Container Offloading & Multi-Service Stack**:
+  - Offloaded local development stacks (PostgreSQL 18, Redis 8, Darnes Bot, and LiteLLM proxy) to run 24/7 on Android hardware with zero Mac CPU/RAM consumption.
+  - Added System V IPC compatibility shim to support enterprise database clusters (PostgreSQL `shmget`/`shmat`) running unprivileged on Android stock kernels.
+- **Docker Desktop macOS Integration & Background REST Daemon (`uls-dockerd`)**:
+  - Implemented the Docker Engine v1.45 REST API server running persistently in userland inside `dragon`.
+  - Connect from your Mac over the standard USB port-forward: `uls docker ps` sets it up automatically, and Docker clients use `tcp://127.0.0.1:2375`.
+- **Slimmer, Faster Distribution**:
+  - Release bundles are much smaller — roughly 60% fewer embedded files — carrying only the components the tools actually use at runtime.
+- **Container Service Stack Installer (`uls docker <container> --install-services`)**:
+  - One command installs the ULS service stack (engine daemon, supervisor, boot scripts) into a target container, ready to start.
+
 ## 0.117.198 — 2026-09-30
 - **Docker Context Management & Remote Daemon Support (`docker context`)**:
   - Implemented standard Docker context management directly inside ULS containers (`docker context create`, `use`, `ls`, `inspect`, `rm`, `show`).
