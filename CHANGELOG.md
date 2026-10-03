@@ -2,7 +2,10 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.118.225 — 2026-10-01
+## 0.120.227 — 2026-10-04
+- **One-Time SSH Setup, Cable-Free Reconnects (`uls ssh`)**:
+  - The first `uls ssh` for an image performs the one-time setup; every later run reconnects directly over Wi-Fi — no adb and no cable needed.
+  - If the remembered server isn't answering (phone rebooted, address changed), `uls ssh` repairs it automatically over the usual channel and reconnects.
 - **Native Host CLI Container Manager (`uls docker`)**:
   - Added built-in `uls docker` command to control on-device containers directly from your Mac without needing Docker Desktop or Docker CLI installed locally on macOS.
   - Implemented human-readable, formatted process tables (`uls docker ps`) displaying truncated 12-char container IDs, service names, images, status, and mapped network ports.
