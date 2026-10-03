@@ -2,7 +2,12 @@
 
 Small, human notes about what changed.  Dates are when the update shipped.
 
-## 0.120.227 — 2026-10-04
+## 0.120.243 — 2026-10-04
+- **culs — Offloaded Builds on Your Phone (`uls docker <distro> …` + `culs …`)**:
+  - A project declares its pipeline in a `culs.config` and runs it — lint → build → test → package → collect — on a ULS container, with the finished artifacts pulled back to `./dist/culs/` (checksums, per-run logs, report.json).
+  - Incremental project sync picks its transport automatically: adb when the phone answers, the cable-free channel otherwise. Workspaces live on a time lease so the phone never accumulates build junk; package-manager caches persist and are capped.
+  - Stages that need Apple's toolchain run natively on your Mac and still collect into the same run folder.
+  - The binary also installs as `culs` for project-first usage: `culs init`, `build`, `lint`, `test`, `ci`, `run`, `logs`, `stop`, `restart`, `status`, `clean`, plus named scripts like `npm run`.
 - **One-Time SSH Setup, Cable-Free Reconnects (`uls ssh`)**:
   - The first `uls ssh` for an image performs the one-time setup; every later run reconnects directly over Wi-Fi — no adb and no cable needed.
   - If the remembered server isn't answering (phone rebooted, address changed), `uls ssh` repairs it automatically over the usual channel and reconnects.
